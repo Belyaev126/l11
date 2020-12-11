@@ -17,11 +17,11 @@ def parChecker(symbolString):
         symbol = symbolString[index]
         if symbol in "(":
             s.append(symbol)
+    else:
+        if len(s) == 0:
+            balanced = False
         else:
-            if len(s) == 0:
-                balanced = False
-            else:
-                top = s.pop()
+            top = s.pop()
             if not matches(top, symbol):
                 balanced = False
         index += 1
