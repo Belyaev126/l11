@@ -8,13 +8,13 @@
 # расставлены правильно
 
 
-def parChecker(symbolString):
+def par_checker(symbol_string):
     s = []
     balanced = True
     index = 0
 
-    while index < len(symbolString) and balanced:
-        symbol = symbolString[index]
+    while index < len(symbol_string) and balanced:
+        symbol = symbol_string[index]
         if symbol in "(":
             s.append(symbol)
     else:
@@ -26,10 +26,7 @@ def parChecker(symbolString):
                 balanced = False
         index += 1
 
-    if balanced and len(s) == 0:
-        return True
-    else:
-        return False
+    return balanced and len(s) == 0
 
 
 def matches(open, close):
@@ -40,5 +37,5 @@ def matches(open, close):
 
 if __name__ == '__main__':
 
-    print(parChecker('((())())'))
-    print(parChecker(')()'))
+    print(par_checker('((())())'))
+    print(par_checker(')()'))
