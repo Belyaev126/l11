@@ -12,6 +12,7 @@ def parChecker(symbolString):
     s = []
     balanced = True
     index = 0
+
     while index < len(symbolString) and balanced:
         symbol = symbolString[index]
         if symbol in "(":
@@ -21,9 +22,10 @@ def parChecker(symbolString):
                 balanced = False
             else:
                 top = s.pop()
-                if not matches(top, symbol):
-                    balanced = False
+            if not matches(top, symbol):
+                balanced = False
         index += 1
+
     if balanced and len(s) == 0:
         return True
     else:
